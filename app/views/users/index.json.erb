@@ -1,1 +1,1 @@
-<%= sanitize @users.reload.to_json only: [ :id, :name ] %>
+<%= sanitize @users.to_json only: [ :id, :name ] %>

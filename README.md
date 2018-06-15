@@ -53,3 +53,9 @@ curl -H 'Accept: application/json' \
      -H 'Authorization: Token token="45c00d43-85ad-46d5-8225-d0eb339b3261"' \
      https://rails-chats-api-ivanhizh.c9users.io/profile
 ```
+```
+
+curl -H 'Authorization: Token token="45c00d43-85ad-46d5-8225-d0eb339b3261"' -d 'chat[user_ids][]=2&chat[user_ids][]=3' https://rails-chats-api-ivanhizh.c9users.io/chats
+
+
+```
