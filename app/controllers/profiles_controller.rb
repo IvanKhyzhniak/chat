@@ -3,6 +3,9 @@ class ProfilesController < ApplicationController
 
   before_action :build_resource, only: :create
 
+  def show     
+  end
+
   private
   def build_resource
     @user = User.new resource_params
