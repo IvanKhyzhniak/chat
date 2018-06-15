@@ -37,19 +37,19 @@ rails s
 ```
 curl -H 'Accept: application/json' \
      -d 'user[email]=john@mcclane.com&user[password]=superhero&user[password_confirmation]=superhero' \
-     localhost:3000/profile
+     https://rails-chats-api-ivanhizh.c9users.io/profile
 ```
 
 ### Sign In
 ```
 curl -H 'Accept: application/json' \
      -d 'session[email]=john@mcclane.com&session[password]=superhero' \
-     localhost:3000/session
+     https://rails-chats-api-ivanhizh.c9users.io/session
 ```
 
 ### Get own Profile info
 ```
 curl -H 'Accept: application/json' \
-     -H 'Authorization: Token token="XXXX-YYYY-ZZZZ"' \
-     localhost:3000/profile
+     -H 'Authorization: Token token="45c00d43-85ad-46d5-8225-d0eb339b3261"' \
+     https://rails-chats-api-ivanhizh.c9users.io/profile
 ```
