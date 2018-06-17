@@ -1,0 +1,1 @@
+<%= sanitize @chat.to_json only: [:id], include: { users: { only: [ :id, :name ] } } %>

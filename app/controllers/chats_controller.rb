@@ -1,25 +1,17 @@
 class ChatsController < ApplicationController
   
-  def index
-    @chats = Chat.all
-  end
-  
   def create
-    @chat = Chat.new(chat_params)
-
-    if @chat.save
-      render json: :index 
-    else
-      render :errors 
-    end
+    @chat = Chat.create
+    @chat.user_ids = users   
   end
   
   private
-  def set_chat
-    @chat = Chat.find(params[:id])
+  
+  def users
+    [current_user.id] + user_ids[:user_ids].map(&:to_i)
   end
-    
-  def chat_params
-    params.require(:chat).permit(:user_ids)
+  
+  def user_ids
+    params.require(:chat).permit(user_ids: [])
   end
 end
