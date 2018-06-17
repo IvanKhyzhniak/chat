@@ -1,12 +1,14 @@
 class MessagesController < ApplicationController
   
   def create
-    @source = {}
-    @source["id"] = current_user.id
-    @source["text"] = msg_params
-    @source["chat_id"] = params[:chat_id]
+    chat = Chat.find(params[:chat_id])
+    if chat.user_ids.include? current_user.id
+      @source = {}
+      @source["id"] = current_user.id
+      @source.merge! msg_params
+      @source["chat_id"] = chat.id
+    end
   end
-  
   
   private
   def msg_params
